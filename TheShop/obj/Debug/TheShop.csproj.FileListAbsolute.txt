@@ -10,3 +10,6 @@ C:\Users\Petar Della Pietra\Desktop\Nul Tien task\Solution project of TheShop ta
 C:\Users\Petar Della Pietra\Desktop\Nul Tien task\Solution project of TheShop task\TheShop\TheShop\obj\Debug\TheShop.csprojAssemblyReference.cache
 C:\Users\Petar Della Pietra\Desktop\Nul Tien task\Solution project of TheShop task\TheShop\TheShop\obj\Debug\TheShop.exe
 C:\Users\Petar Della Pietra\Desktop\Nul Tien task\Solution project of TheShop task\TheShop\TheShop\obj\Debug\TheShop.pdb
+C:\NulTien\theshopproject\TheShop\obj\Debug\TheShop.csprojAssemblyReference.cache
+C:\NulTien\theshopproject\TheShop\obj\Debug\TheShop.csproj.CoreCompileInputs.cache
+C:\NulTien\theshopproject\TheShop\obj\Debug\TheShop.pdb

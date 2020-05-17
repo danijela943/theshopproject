@@ -9,13 +9,11 @@ namespace TheShop
 	public class ShopService : IShopService
 	{
 		private readonly DatabaseDriver _databaseDriver;
-		private readonly Logger _logger;
 		private List<ISupplier> _suppliers;
 
 		public ShopService()
 		{
 			_databaseDriver = new DatabaseDriver();
-			_logger = new Logger();
 			_suppliers = new List<ISupplier>()
 			{
 				new Supplier1(),
@@ -45,7 +43,7 @@ namespace TheShop
 				throw new Exception("Could not order article");
 			}
 
-			_logger.Debug("Trying to sell article with ID = " + id);
+            Logger.Debug("Trying to sell article with ID = " + id);
 
 			article.IsSold = true;
 			article.SoldDate = DateTime.Now;
@@ -54,12 +52,12 @@ namespace TheShop
 			try
 			{
 				_databaseDriver.Save(article);
-				_logger.Info("Article with ID = " + id + " is sold.");
+                Logger.Info("Article with ID = " + id + " is sold.");
 			}
 			catch (Exception)
 			{
 				string errorMessage = "Could not save article with ID = " + id;
-				_logger.Error(errorMessage);
+                Logger.Error(errorMessage);
 				throw new Exception(errorMessage);
 			}
 
