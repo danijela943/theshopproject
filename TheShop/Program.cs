@@ -28,8 +28,8 @@ namespace TheShop
         private static void Main(string[] args)
 		{
 
-            InitializeProps();
-            InitializeSession(); // TODO: from storage
+            InstanciateDependancies();
+            SetSession(); // TODO: from storage
 
             ShopArticleFilter filter = null;
             var firstArticle = articleService.GetFirst().Result;
@@ -55,7 +55,7 @@ namespace TheShop
             Console.ReadKey();
         }
 
-        private static void InitializeProps()
+        private static void InstanciateDependancies() 
         {
             #region Preparing for dependancy injection
             storage = InMemoryStorage.Instance;
@@ -76,7 +76,7 @@ namespace TheShop
             });
         }
 
-        private static void InitializeSession()
+        private static void SetSession()
         {
             Session.Set(new Buyer() { Id = Guid.NewGuid(), Username = "danijela" });
         }
