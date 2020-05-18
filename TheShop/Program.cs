@@ -36,7 +36,7 @@ namespace TheShop
             if (firstArticle != null)
             {
                 articleFilter = new ShopArticleFilter(firstArticle.Id, 500);
-                shopService.ShopArticle(articleFilter);
+                shopService.ShopArticle(articleFilter); // separate in 2 methods - FindArticle and BuyArticle
             }
 
             ShowAllArticles();
