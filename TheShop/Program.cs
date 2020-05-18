@@ -31,7 +31,7 @@ namespace TheShop
             InstanciateDependancies();
             SetSession(); // TODO: from storage
 
-            ShopArticleFilter filter = null;
+            ShopArticleFilter articleFilter = null;
             var firstArticle = articleService.GetFirst().Result;
             if (firstArticle != null)
             {
@@ -49,8 +49,8 @@ namespace TheShop
             int maxPrice;
             Int32.TryParse(Console.ReadLine(), out maxPrice);
 
-            filter = new ShopArticleFilter(articleId, maxPrice);
-            shopService.ShopArticle(filter);
+            articleFilter = new ShopArticleFilter(articleId, maxPrice);
+            shopService.ShopArticle(articleFilter);
 
             Console.ReadKey();
         }
