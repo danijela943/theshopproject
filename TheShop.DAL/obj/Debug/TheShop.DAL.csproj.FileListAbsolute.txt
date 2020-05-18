@@ -1,0 +1,5 @@
+C:\NulTien\theshopproject\TheShop.DAL\bin\Debug\TheShop.DAL.dll
+C:\NulTien\theshopproject\TheShop.DAL\bin\Debug\TheShop.DAL.pdb
+C:\NulTien\theshopproject\TheShop.DAL\obj\Debug\TheShop.DAL.csproj.CoreCompileInputs.cache
+C:\NulTien\theshopproject\TheShop.DAL\obj\Debug\TheShop.DAL.dll
+C:\NulTien\theshopproject\TheShop.DAL\obj\Debug\TheShop.DAL.pdb

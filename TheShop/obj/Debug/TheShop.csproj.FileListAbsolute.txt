@@ -13,3 +13,12 @@ C:\Users\Petar Della Pietra\Desktop\Nul Tien task\Solution project of TheShop ta
 C:\NulTien\theshopproject\TheShop\obj\Debug\TheShop.csprojAssemblyReference.cache
 C:\NulTien\theshopproject\TheShop\obj\Debug\TheShop.csproj.CoreCompileInputs.cache
 C:\NulTien\theshopproject\TheShop\obj\Debug\TheShop.pdb
+C:\NulTien\theshopproject\TheShop\bin\Debug\TheShop.exe.config
+C:\NulTien\theshopproject\TheShop\bin\Debug\TheShop.exe
+C:\NulTien\theshopproject\TheShop\bin\Debug\TheShop.pdb
+C:\NulTien\theshopproject\TheShop\bin\Debug\TheShop.Core.dll
+C:\NulTien\theshopproject\TheShop\bin\Debug\TheShop.DAL.dll
+C:\NulTien\theshopproject\TheShop\bin\Debug\TheShop.Core.pdb
+C:\NulTien\theshopproject\TheShop\bin\Debug\TheShop.DAL.pdb
+C:\NulTien\theshopproject\TheShop\obj\Debug\TheShop.csproj.CopyComplete
+C:\NulTien\theshopproject\TheShop\obj\Debug\TheShop.exe

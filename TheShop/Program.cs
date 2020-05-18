@@ -1,55 +1,84 @@
 ﻿using System;
+using TheShop.Core.Interfaces;
+using TheShop.Core.Interfaces.Repositories;
+using TheShop.Core.Interfaces.Services;
+using TheShop.Core.Models;
+using TheShop.Core.Repositories;
+using TheShop.Core.Services;
+using TheShop.Core.Shared.Sessions;
+using TheShop.DAL.Data;
+using TheShop.DAL.Interfaces;
+using TheShop.DAL.Services;
+using TheShop.Entites;
 
 namespace TheShop
 {
 	internal class Program
 	{
-		private static IShopService _shopService;
-		private static void Main(string[] args)
+        static InMemoryStorage storage;
+
+        static IArticleRepository articleRepository;
+        static IPricingRepository pricingRepository;
+        static IOrderRepository orderRepository;
+        static ILogger<ShopService> logger;
+        static IArticleService articleService;
+        static IShopService shopService;
+
+
+        private static void Main(string[] args)
 		{
-			_shopService = new ShopService();
 
-			try
-			{
-				//order and sell
-				_shopService.OrderAndSellArticle(1, 20, 10);
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine(ex);
-			}
+            InitializeProps();
+            InitializeSession(); // TODO: from storage
 
-			try
-			{
-				//print article on console
-				var article = _shopService.GetById(1);
-				Console.WriteLine("Found article with ID: " + article.ID);
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine("Article not found: " + ex);
-			}
+            ShopArticleFilter filter = null;
+            var firstArticle = articleService.GetFirst().Result;
+            if (firstArticle != null)
+            {
+                filter = new ShopArticleFilter(firstArticle.Id, 500);
+                shopService.ShopArticle(filter);
+            }
 
-			try
-			{
-				//print article on console				
-				var article = _shopService.GetById(12);
-				if (article == null)
-				{
-					Console.WriteLine("Article with ID: " + 12 + " not found.");
-				}
-				else
-				{
-					Console.WriteLine("Found article with ID: " + article.ID);
-				}
-				
-			}
-			catch (Exception ex)
-			{
-				Console.WriteLine("Article not found: " + ex);
-			}
+            ShowAllArticles();
 
-			Console.ReadKey();
-		}
-	}
+            Console.WriteLine("Enter Article ID to find in inventory:");
+            Guid articleId;
+            Guid.TryParse(Console.ReadLine(), out articleId);
+
+            Console.WriteLine("Enter MAX PRICE:");
+            int maxPrice;
+            Int32.TryParse(Console.ReadLine(), out maxPrice);
+
+            filter = new ShopArticleFilter(articleId, maxPrice);
+            shopService.ShopArticle(filter);
+
+            Console.ReadKey();
+        }
+
+        private static void InitializeProps()
+        {
+            #region Preparing for dependancy injection
+            storage = InMemoryStorage.Instance;
+            articleRepository = new ArticleRepository(storage);
+            pricingRepository = new PricingRepository(storage);
+            orderRepository = new OrderRepository(storage);
+            logger = new Core.ConsoleLogger<ShopService>();
+            #endregion
+            articleService = new ArticleService(articleRepository, new Core.ConsoleLogger<ArticleService>());
+            shopService = new ShopService(articleRepository, pricingRepository, orderRepository, logger);
+        }
+        private static void ShowAllArticles()
+        {
+            var articles = articleService.GetAll().Result;
+            articles.ForEach(article =>
+            {
+                Console.WriteLine(article.ToString());
+            });
+        }
+
+        private static void InitializeSession()
+        {
+            Session.Set(new Buyer() { Id = Guid.NewGuid(), Username = "danijela" });
+        }
+    }
 }

@@ -1,0 +1,9 @@
+C:\NulTien\theshopproject\TheShop.Core\bin\Debug\TheShop.Core.dll
+C:\NulTien\theshopproject\TheShop.Core\bin\Debug\TheShop.Core.pdb
+C:\NulTien\theshopproject\TheShop.Core\bin\Debug\TheShop.DAL.dll
+C:\NulTien\theshopproject\TheShop.Core\bin\Debug\TheShop.DAL.pdb
+C:\NulTien\theshopproject\TheShop.Core\obj\Debug\TheShop.Core.csprojAssemblyReference.cache
+C:\NulTien\theshopproject\TheShop.Core\obj\Debug\TheShop.Core.csproj.CoreCompileInputs.cache
+C:\NulTien\theshopproject\TheShop.Core\obj\Debug\TheShop.Core.csproj.CopyComplete
+C:\NulTien\theshopproject\TheShop.Core\obj\Debug\TheShop.Core.dll
+C:\NulTien\theshopproject\TheShop.Core\obj\Debug\TheShop.Core.pdb

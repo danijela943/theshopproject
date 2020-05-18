@@ -42,27 +42,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseDriver.cs" />
-    <Compile Include="Interfaces\IEntity.cs" />
-    <Compile Include="IShopService.cs" />
-    <Compile Include="Logger.cs" />
-    <Compile Include="Enitites\Pricing.cs" />
-    <Compile Include="Enitites\Supplier.cs" />
-    <Compile Include="Enitites\Buyer.cs" />
-    <Compile Include="Suppliers\ISupplier.cs" />
-    <Compile Include="Enitites\Article.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShopService.cs" />
-    <Compile Include="Suppliers\Supplier1.cs" />
-    <Compile Include="Suppliers\Supplier2.cs" />
-    <Compile Include="Suppliers\Supplier3.cs" />
-    <Compile Include="Suppliers\SupplierBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\TheShop.Core\TheShop.Core.csproj">
+      <Project>{8214cc50-f744-4d47-81c2-0e5659d7c5ef}</Project>
+      <Name>TheShop.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TheShop.DAL\TheShop.DAL.csproj">
+      <Project>{23508f96-54ad-46b1-93a9-52a413a4f8a9}</Project>
+      <Name>TheShop.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

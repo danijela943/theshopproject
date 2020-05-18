@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TheShop.Interfaces
+namespace TheShop.DAL.Interfaces
 {
     public interface IEntity
     {
