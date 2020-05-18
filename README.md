@@ -1,7 +1,7 @@
 # theshopproject
 Project for testing skills.
 
-In project is included:
+This project includes:
 - Repository/Service Design Pattern
 - Singleton Design Pattern
 - Dependancy Injection
