@@ -35,8 +35,8 @@ namespace TheShop
             var firstArticle = articleService.GetFirst().Result;
             if (firstArticle != null)
             {
-                filter = new ShopArticleFilter(firstArticle.Id, 500);
-                shopService.ShopArticle(filter);
+                articleFilter = new ShopArticleFilter(firstArticle.Id, 500);
+                shopService.ShopArticle(articleFilter);
             }
 
             ShowAllArticles();
